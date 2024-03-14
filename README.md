@@ -6,9 +6,8 @@
 
 1. Zainstaluj QuickCheck: `cabal install --lib QuickCheck`
 2. Umieść pliki `Graph.hs` oraz `Set.hs` z rozwiązaniem w katalogu `zad01/`
-3. Wczytaj plik z testami do `ghci` np. dla wszystkich testów wykonaj
-   `ghci TestAll.hs`
-4. Uruchom testy wpisując do interpretera ghci `main`
+3. Odpal `make`
+4. Wykonaj `TestAll`
 
 ### Dodawanie testów
 
