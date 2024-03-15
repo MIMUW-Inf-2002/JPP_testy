@@ -1,2 +1,7 @@
 Graph.hs
 Set.hs
+
+# Wyniki kompilacji
+TestAll
+*.hi
+*.o
