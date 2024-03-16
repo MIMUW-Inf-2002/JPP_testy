@@ -22,3 +22,16 @@ main = do
 
 writeln :: String -> IO ()
 writeln = putStrLn
+
+-- instance (Arbitrary a, Graph g) => Arbitrary (g a) where
+instance (Arbitrary a) => Arbitrary (Basic a) where
+  arbitrary = sized arb where
+    arb 0 = return empty
+    arb 1 = vertex <$> arbitrary
+    arb n = oneof [ union <$> arb2 <*> arb2
+                  , connect <$> arb' <*> arb'] where
+      arb2 = arb (div n 4)
+      arb' = arb (intSqrt n)
+      intSqrt :: Int -> Int
+      intSqrt = round . sqrt . fromIntegral
+
