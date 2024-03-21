@@ -4,6 +4,7 @@ import qualified TestRelation
 import qualified TestFibonacci
 import qualified TestKwasow
 
+main :: IO ()
 main = do
   writeln ">>> [Official] Set"
   TestSet.main

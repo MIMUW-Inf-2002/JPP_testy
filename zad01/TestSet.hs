@@ -22,6 +22,7 @@ reasonable :: Int -> Set Int -> Bool
 reasonable a s = member a (singleton a <> s)
 
 
+main :: IO ()
 main = do
        writeln "testing left unit"       
        quickCheck leftUnit
