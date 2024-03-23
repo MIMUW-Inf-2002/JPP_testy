@@ -1,3 +1,4 @@
+{-# LANGUAGE TypeApplications #-}
 module TestKwasow where
 import Graph
 import Test.QuickCheck
