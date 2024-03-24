@@ -3,6 +3,7 @@ import Graph
 import Test.QuickCheck
 import Set
 
+fibHelper :: (Ord t1, Num t1) => (t2 -> t2 -> t2) -> t2 -> t2 -> t1 -> t2
 fibHelper f a b n
     | n > 0 = fibHelper f b (f a b) (n-1)
     | otherwise = a  

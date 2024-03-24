@@ -4,6 +4,7 @@ import Graph
 import Test.QuickCheck
 import Set
 
+suite1 :: IO ()
 suite1 = do
   quickCheck prop1
   quickCheck prop2
@@ -22,11 +23,13 @@ suite1 = do
     prop7 = todot (vertex @Basic 1) == "digraph {\n1;\n}"
     prop8 = todot (connect @Basic 1 2) == "digraph {\n1 -> 2;\n}"
 
+suite2 :: IO ()
 suite2 = do
   quickCheck prop1 where
     l = [1..100000] ++ [1..100000] ++ [1..100000] ++ [1..100000] ++ [1..100000]
     prop1 = toAscList (fromList l) == [1..100000]
 
+suite3 :: IO ()
 suite3 = do
   quickCheck prop1
   quickCheck prop2
@@ -41,6 +44,7 @@ suite3 = do
     prop5 = mergeV 21 37 34 example34 == example34
     prop6 = mergeV 1 2 12 (1*2) == (12*12)
 
+suite4 :: IO ()
 suite4 = do
   quickCheck prop1
   quickCheck prop2 where
@@ -48,6 +52,7 @@ suite4 = do
     prop2 = splitV 21 2 1 example34 == example34
 
 -- Main
+main :: IO ()
 main = do
       -- Begin
       writeln "Starting Kwasow tests"

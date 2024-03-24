@@ -42,6 +42,7 @@ monadAssocProp' :: Basic Int -> Basic Int -> Basic Int -> Bool
 monadAssocProp' x y z = ((x >> y) >> z) == (x >> (y >> z))
 
 
+main :: IO ()
 main = do
        let monadTests = True
        writeln "connect left unit"

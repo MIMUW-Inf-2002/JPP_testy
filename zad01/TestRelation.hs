@@ -24,6 +24,7 @@ distributive x y z = x*(y+z) == x*y + x*z
 decomposable :: Relation Int -> Relation Int -> Relation Int -> Bool
 decomposable x y z = x*y*z == x*y + x*z + y*z
 
+main :: IO ()
 main = do
        writeln "connect left unit"       
        quickCheck leftUnit
